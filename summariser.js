@@ -3,7 +3,7 @@ async function summarizeText() {
     const summaryText = document.getElementById('summaryText');
 
     // Example using TextRazor API
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = 'ee5e9350e2b2b3dc62e1e2927a8e2fc659e9ad0e22320aefca7e8e85';
     const apiUrl = 'https://api.textrazor.com/';
 
     const response = await fetch(apiUrl, {
