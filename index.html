@@ -14,6 +14,7 @@
     <meta property="og:description" content="Software Engineer specialising in full-stack product development, mobile apps, cloud infrastructure, and AI-powered solutions." />
     <meta property="og:image" content="https://ruhulamin005.github.io/meta.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -104,17 +105,6 @@
         }
         .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); opacity: 1; transform: translateY(-1px); }
 
-        /* ─── Animated gradient mesh background ─────────────────────────── */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(ellipse 80% 60% at 20% 10%, rgba(34,211,238,0.06) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(167,139,250,0.05) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 0;
-        }
 
         section, nav, header, footer { position: relative; z-index: 1; }
 
@@ -187,27 +177,6 @@
             align-items: center;
             width: 100%;
         }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            background: rgba(34,211,238,0.08);
-            border: 1px solid rgba(34,211,238,0.2);
-            border-radius: 100px;
-            padding: .3rem .85rem;
-            font-size: .78rem;
-            font-weight: 600;
-            color: var(--cyan);
-            margin-bottom: 1.5rem;
-            letter-spacing: .04em;
-        }
-        .hero-badge::before {
-            content: '';
-            width: 7px; height: 7px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: .3; }
@@ -223,10 +192,7 @@
         .hero-role {
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             font-weight: 600;
-            background: linear-gradient(90deg, var(--cyan), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--cyan);
             margin-bottom: 1.25rem;
         }
         .hero-bio {
@@ -262,8 +228,8 @@
             width: 270px; height: 270px;
             border-radius: 50%;
             padding: 4px;
-            background: linear-gradient(135deg, var(--cyan), var(--purple));
-            box-shadow: var(--glow-cyan);
+            background: var(--border);
+            border: 2px solid rgba(99,179,237,0.25);
         }
         .hero-photo-ring img {
             width: 100%; height: 100%;
@@ -271,22 +237,6 @@
             object-fit: cover;
             border: 4px solid var(--bg);
         }
-        .hero-photo-badge {
-            position: absolute;
-            bottom: 12px; right: -8px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: .5rem .9rem;
-            font-size: .78rem;
-            font-weight: 600;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: .4rem;
-            box-shadow: var(--shadow);
-        }
-        .hero-photo-badge i { color: var(--green); }
 
         /* ─── SECTION WRAPPER ────────────────────────────────────────────── */
         .section-wrap {
@@ -339,7 +289,6 @@
         }
         .skill-category:hover {
             border-color: rgba(34,211,238,0.3);
-            box-shadow: var(--glow-cyan);
         }
         .skill-cat-header {
             display: flex;
@@ -399,22 +348,10 @@
             position: relative;
             overflow: hidden;
         }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--cyan), var(--purple));
-            transform: scaleX(0);
-            transition: transform .3s;
-            transform-origin: left;
-        }
         .project-card:hover {
             border-color: rgba(34,211,238,0.25);
-            box-shadow: var(--glow-cyan);
             transform: translateY(-3px);
         }
-        .project-card:hover::before { transform: scaleX(1); }
 
         .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
         .project-icon {
@@ -456,7 +393,7 @@
             position: absolute;
             left: 0; top: 0; bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, var(--cyan), transparent);
+            background: var(--border);
         }
         .timeline-item {
             position: relative;
@@ -515,7 +452,6 @@
         }
         .edu-card:hover {
             border-color: rgba(34,211,238,0.3);
-            box-shadow: var(--glow-cyan);
             transform: translateY(-2px);
         }
         .edu-degree-icon {
@@ -556,7 +492,6 @@
         }
         .pub-card:hover {
             border-color: rgba(34,211,238,0.3);
-            box-shadow: var(--glow-cyan);
         }
         .pub-num {
             flex-shrink: 0;
@@ -761,13 +696,11 @@
 <section id="hero">
     <div class="hero-grid" style="max-width:1200px;width:100%;margin:0 auto;">
         <div class="hero-content">
-            <div class="hero-badge">Available for opportunities · Adelaide, AU</div>
             <h1 class="hero-name">Md Ruhul Amin</h1>
             <p class="hero-role">Software Engineer &amp; AI Product Builder</p>
             <p class="hero-bio">
-                Full-stack engineer with a passion for building reliable, production-grade software —
-                from cloud APIs and mobile apps to ML-powered products. Masters in IT from Flinders University.
-                Currently open to roles in software engineering, platform engineering, and full-stack product development.
+                Full-stack engineer building production software — cloud APIs, mobile apps, ML-powered products.
+                Masters in IT from Flinders University. Open to software engineering and full-stack roles.
             </p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">
@@ -799,9 +732,6 @@
             <div class="hero-photo-ring">
                 <img src="images/image.png" alt="Md Ruhul Amin" />
             </div>
-            <div class="hero-photo-badge">
-                <i class="fa fa-circle"></i> Open to Work
-            </div>
         </div>
     </div>
 </section>
@@ -811,21 +741,20 @@
     <div class="section-wrap">
         <div class="about-grid">
             <div class="reveal">
-                <p class="section-label">01 · About me</p>
-                <h2 class="section-title">Building things that<br/>actually ship</h2>
+                <p class="section-label">About</p>
+                <h2 class="section-title">About me</h2>
                 <p style="color:var(--muted);margin-bottom:1rem;">
-                    I'm a software engineer based in Adelaide, Australia, with a background in Computer Science (North South University, Dhaka)
-                    and a Masters in Information Technology from Flinders University (2023–2025).
+                    I'm a software engineer based in Adelaide, Australia. CS background from North South University (Dhaka)
+                    and a Masters in IT from Flinders University (2023–2025).
                 </p>
                 <p style="color:var(--muted);margin-bottom:1rem;">
-                    I build end-to-end products — from Next.js web apps and Expo mobile apps, to Python backend services,
-                    PostgreSQL databases, and CI/CD pipelines. I've shipped iOS and Android apps to production,
-                    integrated Stripe and Apple/Google in-app purchases, built AI-powered features with the Anthropic API,
-                    and designed database schemas with Row Level Security for multi-tenant SaaS platforms.
+                    I build end-to-end products — Next.js web apps, Expo mobile apps, Python backend services,
+                    PostgreSQL databases, CI/CD pipelines. I've shipped iOS and Android apps to production,
+                    integrated Stripe and Apple/Google in-app purchases, built features with the Anthropic API,
+                    and designed multi-tenant SaaS schemas with Row Level Security.
                 </p>
                 <p style="color:var(--muted);">
-                    I'm drawn to IoT, data-driven systems, and products that solve real-world problems at scale —
-                    making me a natural fit for teams working at the intersection of software, hardware, and data.
+                    Particularly interested in IoT, data-driven systems, and the overlap of software, hardware, and data.
                 </p>
             </div>
             <div class="reveal" style="transition-delay:.15s">
@@ -856,10 +785,10 @@
 <section id="skills">
     <div class="section-wrap">
         <div class="reveal">
-            <p class="section-label">02 · Skills</p>
+            <p class="section-label">Skills</p>
             <h2 class="section-title">Technologies &amp; Tools</h2>
             <p class="section-desc">
-                A broad stack spanning frontend, backend, mobile, cloud, and data — built through shipping real products.
+                Frontend, backend, mobile, cloud, and data.
             </p>
         </div>
         <div class="skills-grid">
@@ -992,9 +921,9 @@
 <section id="projects">
     <div class="section-wrap">
         <div class="reveal">
-            <p class="section-label">03 · Projects</p>
-            <h2 class="section-title">Things I've built</h2>
-            <p class="section-desc">A selection of production products and research projects.</p>
+            <p class="section-label">Projects</p>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-desc">Production products and research.</p>
         </div>
         <div class="projects-grid">
 
@@ -1096,7 +1025,7 @@
 <section id="experience">
     <div class="section-wrap">
         <div class="reveal">
-            <p class="section-label">04 · Experience</p>
+            <p class="section-label">Experience</p>
             <h2 class="section-title">Work history</h2>
         </div>
         <div class="timeline" style="max-width:780px">
@@ -1151,8 +1080,8 @@
 <section id="education">
     <div class="section-wrap">
         <div class="reveal">
-            <p class="section-label">05 · Education</p>
-            <h2 class="section-title">Academic background</h2>
+            <p class="section-label">Education</p>
+            <h2 class="section-title">Education</h2>
         </div>
         <div class="edu-grid">
             <div class="edu-card reveal">
@@ -1177,9 +1106,9 @@
 <section id="publications">
     <div class="section-wrap">
         <div class="reveal">
-            <p class="section-label">06 · Research</p>
+            <p class="section-label">Research</p>
             <h2 class="section-title">Publications</h2>
-            <p class="section-desc">Peer-reviewed research in IoT systems and medical AI.</p>
+            <p class="section-desc">Peer-reviewed research in IoT and medical imaging.</p>
         </div>
         <div class="pub-list">
             <div class="pub-card reveal">
@@ -1212,10 +1141,10 @@
 <section id="contact">
     <div class="section-wrap">
         <div class="reveal">
-            <p class="section-label">07 · Contact</p>
-            <h2 class="section-title">Let's work together</h2>
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Get in touch</h2>
             <p class="section-desc">
-                Open to full-time software engineering roles, contract work, and interesting collaborations in Adelaide or remote.
+                Open to full-time roles and contract work in Adelaide or remote.
             </p>
         </div>
         <div class="contact-grid">
